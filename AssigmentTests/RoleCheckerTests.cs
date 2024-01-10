@@ -26,5 +26,38 @@ namespace AssigmentTests
             var result = RoleChecker.HasPrivligies(role, validUntil);
             Assert.Equal(expectedResult, result);
         }
+
+        [Theory]
+        [InlineData(RoleChecker.Role.Admin, "Admin")]
+        [InlineData(RoleChecker.Role.User, "User")]
+        [InlineData(RoleChecker.Role.Guest, "Guest")]
+        public void RoleToString_ReturnsCorrectString(Role role, string expected)
+        {
+            // Act
+            var result = RoleChecker.RoleToString(role);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("Admin", RoleChecker.Role.Admin)]
+        [InlineData("User", RoleChecker.Role.User)]
+        [InlineData("Guest", RoleChecker.Role.Guest)]
+        public void StringToRole_ReturnsCorrectRole(string roleString, RoleChecker.Role expected)
+        {
+            // Act
+            var result = RoleChecker.StringToRole(roleString);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void StringToRole_ThrowsExceptionForInvalidString()
+        {
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => RoleChecker.StringToRole("InvalidRole"));
+        }
     }
 }

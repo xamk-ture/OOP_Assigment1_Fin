@@ -50,7 +50,7 @@ namespace OOP_Assigment1
 
     public static class DateTimeHelper
     {
-   
+
         public static int CalculateAge(DateTime birthTime)
         {
             //Assigment 7: Calculate the age of the person born using the birthTime parameter.
@@ -107,6 +107,20 @@ namespace OOP_Assigment1
         public static bool HasPrivligies(Role role, DateTime validUntill) 
         {
             //Assigment 12: Return true if role is Admin or User and validUntill is in the future, otherwise return false.
+            throw new NotImplementedException();
+        }
+
+        public static string RoleToString(Role role)
+        {
+            //Assigment 13: Implement a method RoleToString(Role role) that converts the Role enum to its string representation.
+             throw new NotImplementedException();
+        }
+
+        public static Role StringToRole(string roleString)
+        {
+            //Assigment 14: Write a method StringToRole(string roleString) that converts a string to the corresponding Role enum. 
+            //If the string does not match any role, throw an appropriate exception.
+            //Hint: Remember how conversion worked on ints (especially TryParse)
             throw new NotImplementedException();
         }
 
