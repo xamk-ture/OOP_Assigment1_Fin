@@ -60,6 +60,7 @@ namespace OOP_Assigment1
         public static DateTime ConvertToDateTime(string date)
         {
             //Assigment 8: Return the first day of the month of the date parameter.
+            //The input string format is 2022-07-31
             throw new NotImplementedException();
         }
 

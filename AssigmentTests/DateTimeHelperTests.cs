@@ -26,6 +26,22 @@ namespace AssigmentTests
             var result = DateTimeHelper.GetDatimeYear(input);
             Assert.Equal(expected, result);
         }
+        
+        [Theory]
+        [InlineData("2022-03-15", "2022-03-01")]
+        [InlineData("2022-07-31", "2022-07-01")]
+        [InlineData("2021-12-25", "2021-12-01")]
+        public void ConvertToDateTime_ReturnsFirstDayOfMonth(string inputDate, string expectedDate)
+        {
+            // Arrange
+            var expectedDateTime = DateTime.Parse(expectedDate);
+
+            // Act
+            var actualDateTime = DateTimeHelper.ConvertToDateTime(inputDate);
+
+            // Assert
+            Assert.Equal(expectedDateTime, actualDateTime);
+        }
 
         [Theory]
         [InlineData("2000-01-01", 24)] // Assuming current year is 2024
