@@ -19,7 +19,7 @@ namespace AssigmentTests
         }
 
         [Theory]
-        [InlineData(RoleChecker.Role.Admin, "2024-01-01", true)] // Assuming today is 2023-12-31
+        [InlineData(RoleChecker.Role.Admin, "2024-10-10", true)] // Assuming today is 2023-12-31
         [InlineData(RoleChecker.Role.User, "2023-11-30", false)] // Assuming today is 2023-12-31
         public void HasPrivileges_ReturnsCorrectValue(RoleChecker.Role role, DateTime validUntil, bool expectedResult)
         {
