@@ -50,21 +50,22 @@ namespace OOP_Assigment1
 
     public static class DateTimeHelper
     {
-        public static DateTime GetFirstDayOfMonth(DateTime date)
-        {
-            //Assigment 7: Return the first day of the month of the date parameter.
-            throw new NotImplementedException();
-        }
-
-        public static DateTime GetDatimeYear(DateTime date)
-        {
-            //Assigment 8: Return the last day of the month of the date parameter.
-            throw new NotImplementedException();
-        }
-
+   
         public static int CalculateAge(DateTime birthTime)
         {
-            //Assigment 9: Calculate the age of the person born using the birthTime parameter.
+            //Assigment 7: Calculate the age of the person born using the birthTime parameter.
+            throw new NotImplementedException();
+        }
+
+        public static DateTime ConvertToDateTime(string date)
+        {
+            //Assigment 8: Return the first day of the month of the date parameter.
+            throw new NotImplementedException();
+        }
+
+        public static bool IsLeapYear(DateTime date)
+        {
+            //Assigment 9: Return true if date is leap year
             throw new NotImplementedException();
         }
 
