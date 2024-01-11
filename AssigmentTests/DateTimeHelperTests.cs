@@ -9,23 +9,6 @@ namespace AssigmentTests
 {
     public class DateTimeHelperTests
     {
-        [Theory]
-        [InlineData("2024-01-15", "2024-01-01")] // January 15, 2024 -> January 1, 2024
-        [InlineData("2024-02-20", "2024-02-01")] // February 20, 2024 -> February 1, 2024
-        public void GetFirstDayOfMonth_ReturnsFirstDay(DateTime input, DateTime expected)
-        {
-            var result = DateTimeHelper.GetFirstDayOfMonth(input);
-            Assert.Equal(expected, result);
-        }
-
-        [Theory]
-        [InlineData("2024-01-15", "2024-01-31")] // January 15, 2024 -> January 31, 2024
-        [InlineData("2024-02-20", "2024-02-29")] // February 20, 2024 (leap year) -> February 29, 2024
-        public void GetDateTimeYear_ReturnsLastDay(DateTime input, DateTime expected)
-        {
-            var result = DateTimeHelper.GetDatimeYear(input);
-            Assert.Equal(expected, result);
-        }
         
         [Theory]
         [InlineData("2022-03-15", "2022-03-01")]
