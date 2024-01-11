@@ -9,7 +9,32 @@ namespace AssigmentTests
 {
     public class DateTimeHelperTests
     {
-        
+        [Fact]
+        public void IsLeapYear_ReturnsTrueForLeapYear()
+        {
+            // Arrange
+            DateTime year = new DateTime(2020, 1, 1);
+
+            // Act
+            var result = DateTimeHelper.IsLeapYear(year);
+
+            // Assert
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void IsLeapYear_ReturnsFalseForLeapYear()
+        {
+            // Arrange
+            DateTime year = new DateTime(2021, 1, 1);
+
+            // Act
+            var result = DateTimeHelper.IsLeapYear(year);
+
+            // Assert
+            Assert.False(result);
+        }
+
         [Theory]
         [InlineData("2022-03-15", "2022-03-01")]
         [InlineData("2022-07-31", "2022-07-01")]
@@ -41,6 +66,18 @@ namespace AssigmentTests
             string expected = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             string result = DateTimeHelper.GetCurrentDateTime();
             Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void TestDaysUntilNextBirthday_BirthdayNextMonth()
+        {
+            var birthDate = new DateTime(1990, 2, 15);
+            var currentDate = new DateTime(2023, 1, 10);
+            var expectedDays = 36; // Calculate this based on your implementation
+
+            var actualDays = DateTimeHelper.DaysUntilNextBirthday(birthDate, currentDate);
+
+            Assert.Equal(expectedDays, actualDays);
         }
     }
 }

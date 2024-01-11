@@ -51,9 +51,9 @@ namespace OOP_Assigment1
     public static class DateTimeHelper
     {
 
-        public static int CalculateAge(DateTime birthTime)
+        public static int CalculateAge(DateTime birthDate)
         {
-            //Assigment 7: Calculate the age of the person born using the birthTime parameter.
+            //Assigment 7: Calculate the age of the person born using the birthDate parameter.
             throw new NotImplementedException();
         }
 
@@ -70,7 +70,7 @@ namespace OOP_Assigment1
             throw new NotImplementedException();
         }
 
-        public static int DaysUntilNextBirthday(DateTime birthDate)
+        public static int DaysUntilNextBirthday(DateTime birthDate, DateTime currentTime)
         {
             //Assigment 10: Calculate the number of days until the next birthday.
             //Note that this is not easily unit tested because the result depends on the current date!!!
