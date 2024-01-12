@@ -7,47 +7,47 @@ using System.Threading.Tasks;
 
 namespace AssigmentTests
 {
-    public class RoleCheckerTests
+    public class RoleCheckerAssigmentTests
     {
         [Theory]
-        [InlineData(RoleChecker.Role.Admin, true)]
-        [InlineData(RoleChecker.Role.User, false)]
-        public void IsAdmin_ReturnsCorrectValue(RoleChecker.Role role, bool expectedResult)
+        [InlineData(RoleCheckerAssigment.Role.Admin, true)]
+        [InlineData(RoleCheckerAssigment.Role.User, false)]
+        public void IsAdmin_ReturnsCorrectValue(RoleCheckerAssigment.Role role, bool expectedResult)
         {
-            var result = RoleChecker.IsAdmin(role);
+            var result = RoleCheckerAssigment.IsAdmin(role);
             Assert.Equal(expectedResult, result);
         }
 
         [Theory]
-        [InlineData(RoleChecker.Role.Admin, "2024-10-10", true)] // Assuming today is 2023-12-31
-        [InlineData(RoleChecker.Role.User, "2023-11-30", false)] // Assuming today is 2023-12-31
-        public void HasPrivileges_ReturnsCorrectValue(RoleChecker.Role role, DateTime validUntil, bool expectedResult)
+        [InlineData(RoleCheckerAssigment.Role.Admin, "2024-10-10", true)] // Assuming today is 2023-12-31
+        [InlineData(RoleCheckerAssigment.Role.User, "2023-11-30", false)] // Assuming today is 2023-12-31
+        public void HasPrivileges_ReturnsCorrectValue(RoleCheckerAssigment.Role role, DateTime validUntil, bool expectedResult)
         {
-            var result = RoleChecker.HasPrivligies(role, validUntil);
+            var result = RoleCheckerAssigment.HasPrivligies(role, validUntil);
             Assert.Equal(expectedResult, result);
         }
 
         [Theory]
-        [InlineData(RoleChecker.Role.Admin, "Admin")]
-        [InlineData(RoleChecker.Role.User, "User")]
-        [InlineData(RoleChecker.Role.Guest, "Guest")]
-        public void RoleToString_ReturnsCorrectString(RoleChecker.Role role, string expected)
+        [InlineData(RoleCheckerAssigment.Role.Admin, "Admin")]
+        [InlineData(RoleCheckerAssigment.Role.User, "User")]
+        [InlineData(RoleCheckerAssigment.Role.Guest, "Guest")]
+        public void RoleToString_ReturnsCorrectString(RoleCheckerAssigment.Role role, string expected)
         {
             // Act
-            var result = RoleChecker.RoleToString(role);
+            var result = RoleCheckerAssigment.RoleToString(role);
 
             // Assert
             Assert.Equal(expected, result);
         }
 
         [Theory]
-        [InlineData("Admin", RoleChecker.Role.Admin)]
-        [InlineData("User", RoleChecker.Role.User)]
-        [InlineData("Guest", RoleChecker.Role.Guest)]
-        public void StringToRole_ReturnsCorrectRole(string roleString, RoleChecker.Role expected)
+        [InlineData("Admin", RoleCheckerAssigment.Role.Admin)]
+        [InlineData("User", RoleCheckerAssigment.Role.User)]
+        [InlineData("Guest", RoleCheckerAssigment.Role.Guest)]
+        public void StringToRole_ReturnsCorrectRole(string roleString, RoleCheckerAssigment.Role expected)
         {
             // Act
-            var result = RoleChecker.StringToRole(roleString);
+            var result = RoleCheckerAssigment.StringToRole(roleString);
 
             // Assert
             Assert.Equal(expected, result);
@@ -57,7 +57,7 @@ namespace AssigmentTests
         public void StringToRole_ThrowsExceptionForInvalidString()
         {
             // Act & Assert
-            Assert.Throws<ArgumentException>(() => RoleChecker.StringToRole("InvalidRole"));
+            Assert.Throws<ArgumentException>(() => RoleCheckerAssigment.StringToRole("InvalidRole"));
         }
     }
 }

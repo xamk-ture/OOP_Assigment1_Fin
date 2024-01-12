@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AssigmentTests
 {
-    public class DateTimeHelperTests
+    public class DateTimeHelperAssigmentTests
     {
         [Fact]
         public void IsLeapYear_ReturnsTrueForLeapYear()
@@ -16,7 +16,7 @@ namespace AssigmentTests
             DateTime year = new DateTime(2020, 1, 1);
 
             // Act
-            var result = DateTimeHelper.IsLeapYear(year);
+            var result = DateTimeHelperAssigment.IsLeapYear(year);
 
             // Assert
             Assert.True(result);
@@ -29,7 +29,7 @@ namespace AssigmentTests
             DateTime year = new DateTime(2021, 1, 1);
 
             // Act
-            var result = DateTimeHelper.IsLeapYear(year);
+            var result = DateTimeHelperAssigment.IsLeapYear(year);
 
             // Assert
             Assert.False(result);
@@ -45,7 +45,7 @@ namespace AssigmentTests
             var expectedDateTime = DateTime.Parse(expectedDate);
 
             // Act
-            var actualDateTime = DateTimeHelper.ConvertToDateTime(inputDate);
+            var actualDateTime = DateTimeHelperAssigment.ConvertToDateTime(inputDate);
 
             // Assert
             Assert.Equal(expectedDateTime, actualDateTime);
@@ -56,7 +56,7 @@ namespace AssigmentTests
         [InlineData("1980-12-31", 43)] // Assuming current year is 2024
         public void CalculateAge_ReturnsCorrectAge(DateTime birthDate, int expectedAge)
         {
-            var age = DateTimeHelper.CalculateAge(birthDate);
+            var age = DateTimeHelperAssigment.CalculateAge(birthDate);
             Assert.Equal(expectedAge, age);
         }
 
@@ -64,7 +64,7 @@ namespace AssigmentTests
         public void GetCurrentDateTime_ReturnsCurrentDateTime()
         {
             string expected = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            string result = DateTimeHelper.GetCurrentDateTime();
+            string result = DateTimeHelperAssigment.GetCurrentDateTime();
             Assert.Equal(expected, result);
         }
 
@@ -75,7 +75,7 @@ namespace AssigmentTests
             var currentDate = new DateTime(2023, 1, 10);
             var expectedDays = 36; // Calculate this based on your implementation
 
-            var actualDays = DateTimeHelper.DaysUntilNextBirthday(birthDate, currentDate);
+            var actualDays = DateTimeHelperAssigment.DaysUntilNextBirthday(birthDate, currentDate);
 
             Assert.Equal(expectedDays, actualDays);
         }
