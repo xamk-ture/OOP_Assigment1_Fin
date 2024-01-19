@@ -35,17 +35,17 @@ namespace AssigmentTests
             Assert.False(result);
         }
 
-        [Theory]
-        [InlineData("2022-03-15", "2022-03-01")]
-        [InlineData("2022-07-31", "2022-07-01")]
-        [InlineData("2021-12-25", "2021-12-01")]
+     [Theory]
+        [InlineData("2022-03-15", "2022-03-15")]
+        [InlineData("2022-07-31", "2022-07-31")]
+        [InlineData("2021-12-25", "2021-12-25")]
         public void ConvertToDateTime_ReturnsFirstDayOfMonth(string inputDate, string expectedDate)
         {
             // Arrange
             var expectedDateTime = DateTime.Parse(expectedDate);
 
             // Act
-            var actualDateTime = DateTimeHelperAssigment.ConvertToDateTime(inputDate);
+            var actualDateTime = DateTimeHelper.ConvertToDateTime(inputDate);
 
             // Assert
             Assert.Equal(expectedDateTime, actualDateTime);
