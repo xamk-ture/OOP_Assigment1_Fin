@@ -39,7 +39,7 @@ namespace AssigmentTests
         [InlineData("2022-03-15", "2022-03-15")]
         [InlineData("2022-07-31", "2022-07-31")]
         [InlineData("2021-12-25", "2021-12-25")]
-        public void ConvertToDateTime_ReturnsFirstDayOfMonth(string inputDate, string expectedDate)
+        public void ConvertToDateTimeTest(string inputDate, string expectedDate)
         {
             // Arrange
             var expectedDateTime = DateTime.Parse(expectedDate);
