@@ -35,7 +35,7 @@ namespace AssigmentTests
             Assert.False(result);
         }
 
-     [Theory]
+        [Theory]
         [InlineData("2022-03-15", "2022-03-15")]
         [InlineData("2022-07-31", "2022-07-31")]
         [InlineData("2021-12-25", "2021-12-25")]
