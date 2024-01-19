@@ -17,9 +17,19 @@ namespace OOP_Assigment1
 
         public static DateTime ConvertToDateTime(string date)
         {
-            //Assigment 8: Return the first day of the month of the date parameter.
+            //Assigment 8: Convert the input string to a DateTime object.
             //The input string format is 2022-07-31
-            throw new NotImplementedException();
+
+            //one way to solve it:
+            var dateParts = date.Split('-');
+
+            var newDate = new DateTime
+                (int.Parse(dateParts[0]), 
+                int.Parse(dateParts[1]), 
+                int.Parse(dateParts[2]));
+
+            //another way to solve it:
+            return DateTime.Parse(date);
         }
 
         public static bool IsLeapYear(DateTime date)
