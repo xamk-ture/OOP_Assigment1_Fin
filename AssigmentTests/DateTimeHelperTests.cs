@@ -45,7 +45,7 @@ namespace AssigmentTests
             var expectedDateTime = DateTime.Parse(expectedDate);
 
             // Act
-            var actualDateTime = DateTimeHelper.ConvertToDateTime(inputDate);
+            var actualDateTime = DateTimeHelperAssigment.ConvertToDateTime(inputDate);
 
             // Assert
             Assert.Equal(expectedDateTime, actualDateTime);
